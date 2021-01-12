@@ -1,3 +1,4 @@
+import json
 import requests
 import os
 
@@ -20,7 +21,7 @@ def lastfm_get(payload):
 
     # add API and format to payload
     payload['api_key'] = API_KEY
-    payload['format'] ='json'
+    payload['format'] = 'json'
 
     # API root url
     url = 'http://ws.audioscrobbler.com/2.0/'
@@ -31,8 +32,9 @@ def lastfm_get(payload):
     return response
 
 
-r = lastfm_get({
-    'method': 'chart.gettopartists'
-})
+def jprint(obj):
+    """Helper function to print json in more readable format"""
 
-print(r.status_code)
+    # create a formatted string of the Python JSON object
+    text = json.dumps(obj, sort_keys=True, indent=4)
+    print(text)
