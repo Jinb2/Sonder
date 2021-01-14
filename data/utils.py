@@ -38,3 +38,28 @@ def jprint(obj):
     # create a formatted string of the Python JSON object
     text = json.dumps(obj, sort_keys=True, indent=4)
     print(text)
+
+def lookup_tags(artist):
+    """
+    args:
+        artist: name of artist you are looking up
+    returns:
+        tags_str: string of most popular tags
+    """
+    response = lastfm_get({
+        'method': 'artist.getTopTags',
+        'artist':  artist
+    })
+
+    # if there's an error, just return nothing
+    if response.status_code != 200:
+        return None
+
+    # extract the top three tags and turn them into a string
+    tags = [t['name'] for t in response.json()['toptags']['tag'][:3]]
+    tags_str = ', '.join(tags)
+
+    # rate limiting
+    if not getattr(response, 'from_cache', False):
+        time.sleep(0.25)
+    return tags_str

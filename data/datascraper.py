@@ -51,5 +51,5 @@ def scraper():
 
         # increment the page number
         page += 1
-        
-    return response
+
+    return responses
