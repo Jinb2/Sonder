@@ -2,6 +2,8 @@ import json
 import requests
 import os
 
+# utils for data manipulation and data scraping
+
 def lastfm_get(payload):
     """Sends request to lastfm.
 
