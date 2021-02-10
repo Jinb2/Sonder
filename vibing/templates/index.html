@@ -2,30 +2,37 @@
 <html>
 
 <head>
-  <!-- Required meta tags -->
+  <!-- Required meta tags  https://www.youtube.com/watch?v=biOMz4puGt8 -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='favicon/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',filename='favicon/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',filename='favicon/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ url_for('static',filename='favicon/site.webmanifest') }}">
   <title>Vibing</title>
-
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <h4><a style="text-decoration:none; color:white;" href="{{ url_for('home')}}">Vibing</a></h4>
-    </div>
-    <ul class="nav-links">
-          <li><a href="#">Surprise Me!</a></li>
-          <li><a href="{{ url_for('popular_recommendation')}}">Popular</a></li>
-          <li><a href="#">Create Playlist</a></li>
-    </ul>
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-  </nav>
-<script src="{{ url_for('static', filename='nav.js') }}"></script>
+	<div class="box-area">
+		<header>
+			<div class="wrapper">
+				<div class="logo">
+					<a href="{{ url_for('home')}}">Vibing</a>
+				</div>
+				<nav>
+					<a href="{{ url_for('popular_recommendation')}}">popular</a>
+          <a href="#">contact</a>
+				</nav>
+			</div>
+		</header>
+		<div class="banner-area">
+			<h2>this is banner</h2>
+		</div>
+
+	</div>
 </body>
+
 
 </html>
