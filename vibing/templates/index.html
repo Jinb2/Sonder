@@ -2,11 +2,11 @@
 <html>
 
 <head>
-  <!-- Required meta tags  https://www.youtube.com/watch?v=biOMz4puGt8 -->
+  <!-- Required meta tags  https://www.youtube.com/watch?v=mEtmJ2xk16g -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='scss/navbar.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='scss/index.css') }}">
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='favicon/apple-touch-icon.png') }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',filename='favicon/favicon-32x32.png') }}">
@@ -14,24 +14,57 @@
   <link rel="manifest" href="{{ url_for('static',filename='favicon/site.webmanifest') }}">
   <title>Vibing</title>
 </head>
-<body>
-	<div class="box-area">
-		<header>
-			<div class="wrapper">
-				<div class="logo">
-					<a href="{{ url_for('home')}}">Vibing</a>
-				</div>
-				<nav>
-					<a href="{{ url_for('popular_recommendation')}}">popular</a>
-          <a href="#">contact</a>
-				</nav>
-			</div>
-		</header>
-		<div class="banner-area">
-			<h2>this is banner</h2>
-		</div>
 
-	</div>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <a href="{{url_for('home')}}">
+        <img class="logo" src="{{url_for('static',filename='logo.png')}}">
+      </a>
+    </div>
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon">
+      <span class="menu-icon">
+        <span class="menu-icon__line"></span>
+      </span>
+    </label>
+    <ul class="nav-links">
+      <li class="nav-link">
+        <a href="#">Personal</a>
+      </li>
+      <li class="nav-link">
+        <a href="{{url_for('popular_recommendation')}}">Recommend</a>
+      </li>
+      <li class="nav-link">
+        <a href="">Share</a>
+      </li>
+    </ul>
+
+  </header>
+  <div class="hero">
+    <h1>VIBING</h1>
+  </div>
+  <div class="container">
+    <h1>What is Vibing?</h1>
+    <p>
+      Ever get tired of listening to the same songs on YouTube over and over again? Well, Vibing is your all-in-one
+      music recommendation system.
+      Experience the power of machine learning as it shows you songs that will amaze you. Vibing learns your music
+      tastes and compares it with other users to create a
+      better music experience.
+      <strong><br>We want you to just vibe!</strong>
+    </p>
+  </div>
+  <div style="padding-top: 1%;" class="getting-started-container">
+    <h1>Getting Started</h1>
+    <h2 style="padding-top: 1%;">Scrambled Eggs</h2>
+    <p>Enjoy this playlist filled with the most unique tastes just like your scrambled eggs.</p>
+    <div class="playlist-container">
+      <iframe src="https://open.spotify.com/embed/playlist/3A1T6H3a9jtJLYNkLkEZxG" width="600" height="680"
+        frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/navbar.js')}}"> </script>
 </body>
 
 
