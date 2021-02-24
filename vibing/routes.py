@@ -9,6 +9,12 @@ from vibing.forms import GenreForm
 def home():
     return render_template('index.html')
 
+
+@app.route("/started")
+def started():
+    return render_template('started.html')
+
+
 @app.route("/popular_recommendation", methods=['GET', 'POST'])
 def popular_recommendation():
     form = GenreForm()
@@ -18,12 +24,13 @@ def popular_recommendation():
         tags = []
         tags.append(genre)
         popular = PopularRecommendation()
-        session["recommendations"] = popular.popular_recommend(data=data,tags=tags)
+        session["recommendations"] = popular.popular_recommend(
+            data=data, tags=tags)
         return redirect(url_for('results'))
-    return render_template('popular_recommendation.html'
-                            ,form=form)
+    return render_template('popular_recommendation.html', form=form)
 
-@app.route("/results", methods=['GET','POST'])
+
+@app.route("/results", methods=['GET', 'POST'])
 def results():
     recommendations = session.get("recommendations")
     return render_template('results.html', recommendations=recommendations)

@@ -6,17 +6,18 @@ import requests_cache
 
 requests_cache.install_cache()
 
+
 def scraper():
-    #TODO change parameters to ask for what data info you want
+    # TODO change parameters to ask for what data info you want
     """Sends requests to lastfm and appends to list"""
 
     # stores our responses
     responses = []
 
     page = 1
-    total_pages = 99999 # dummy number
+    total_pages = 99999  # dummy number
 
-    #loop for requesting data
+    # loop for requesting data
     while page <= total_pages:
 
         payload = {
@@ -27,10 +28,10 @@ def scraper():
 
         print("Requesting page {}/{}".format(page, total_pages))
 
-        #clear the output
-        clear_output(wait = True)
+        # clear the output
+        clear_output(wait=True)
 
-        #send our requests
+        # send our requests
         response = lastfm_get(payload)
 
         # if our request is invalid
@@ -38,14 +39,14 @@ def scraper():
             print(response.text)
             break
 
-        #extract pagination info
+        # extract pagination info
         page = int(response.json()['artists']['@attr']['page'])
         total_pages = int(response.json()['artists']['@attr']['totalPages'])
 
-        #append to list
+        # append to list
         responses.append(response)
 
-         # if it's not a cached result, sleep
+        # if it's not a cached result, sleep
         if not getattr(response, 'from_cache', False):
             time.sleep(0.25)
 

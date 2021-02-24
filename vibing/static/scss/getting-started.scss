@@ -1,0 +1,56 @@
+@import 'variables';
+
+
+.getting-started-container{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    background-color:rgb(34, 35, 38);
+
+    h1{
+        letter-spacing: 2px;
+        padding-top: 1%;
+        font-size: 3rem;
+
+        @media only screen and (max-width:$breakpoint-tablet){
+            padding-top: 4%;
+            font-size: 1.5rem;
+          
+        }
+    }
+
+    h2{
+        font-size: 1.5rem;
+
+        @media only screen and (max-width:$breakpoint-tablet){
+            font-size: 1rem;
+          
+        }
+    }
+    p{
+        padding-top: 1%;
+        padding-bottom: 1%;
+        font-size: 1.5rem;
+
+        @media only screen and (max-width:$breakpoint-tablet){
+            font-size: 0.75rem;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+
+    }
+
+}
+
+.playlist-container{
+    padding-top: 1%;
+
+    iframe{
+        @media only screen and (max-width:$breakpoint-tablet){
+            height: 250px;
+            width: 250px;
+          
+        }
+
+    }
+}

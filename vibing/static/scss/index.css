@@ -30,48 +30,4 @@
     padding-right: 0;
   }
 }
-
-.getting-started-container {
-  text-align: center;
-  color: white;
-  text-transform: uppercase;
-  background-color: #222326;
-}
-
-.getting-started-container h1 {
-  letter-spacing: 2px;
-  padding-top: 1%;
-  font-size: 3rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .getting-started-container h1 {
-    font-size: 2rem;
-  }
-}
-
-.getting-started-container h2 {
-  font-size: 1.5rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .getting-started-container h2 {
-    font-size: 1rem;
-  }
-}
-
-.getting-started-container p {
-  padding-top: 1%;
-  font-size: 1rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .getting-started-container p {
-    font-size: 0.5rem;
-  }
-}
-
-.playlist-container {
-  padding-top: 1%;
-}
 /*# sourceMappingURL=index.css.map */
