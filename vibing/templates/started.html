@@ -2,12 +2,11 @@
 <html>
 
 <head>
-    <!-- Required meta tags  https://www.youtube.com/watch?v=mEtmJ2xk16g -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='scss/navbar.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='scss/getting-started.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='scss/footer.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/getting-started.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
     <script src="https://kit.fontawesome.com/eb46b50ba3.js" crossorigin="anonymous"></script>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='favicon/apple-touch-icon.png') }}">
@@ -35,7 +34,10 @@
                 <a href="{{url_for('started')}}">Getting Started</a>
             </li>
             <li class="nav-link">
-                <a href="{{url_for('popular_recommendation')}}">Recommend</a>
+                <a href="{{url_for('popular_recommendation')}}">popular recommend</a>
+            </li>
+            <li class="nav-link">
+                <a href="{{url_for('about')}}">about</a>
             </li>
         </ul>
 
@@ -73,7 +75,8 @@
                         <h4>contact us</h4>
                         <ul>
                             <li>
-                                <a href="#"><i class="fab fa-github fa-2x"></i> Feature Request?</a>
+                                <a href="https://github.com/Jinb2/Sonder/issues/new"><i class="fab fa-github fa-2x"></i>
+                                    Feature Request?</a>
                             </li>
 
                             <li style="padding-top: 5%;"><a href="">

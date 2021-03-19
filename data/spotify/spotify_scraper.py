@@ -29,14 +29,24 @@ def artistInfo(name):
 
 
 def getTopTracks(name):
-    # create authentaction for ClientCredentials
-    spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials())
+    ''' return top 5 tracks of artist
 
+        args:
+            name (string) : name of artist
+        return:
+            top_tracks (list) : list of tracks along with album image
+    '''
     artist, image, uri = artistInfo(name)
 
+    spotify = spotipy.Spotify(
+        client_credentials_manager=SpotifyClientCredentials())
     results = spotify.artist_top_tracks(uri)
-    for track in results['tracks'][:10]:
-        print('track    : ' + track['name'])
-        print('audio    : ' + track['preview_url'])
-        print('cover art: ' + track['album']['images'][0]['url'])
-        print()
+    top_tracks = []
+    album_images = []
+
+    for track in results['tracks'][:5]:
+        track_name = track['name']
+        top_tracks.append(track_name)
+        album_image = track['album']['images'][0]['url']
+        album_images.append(album_image)
+    return top_tracks, album_images

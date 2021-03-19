@@ -1,6 +1,7 @@
 from flask import render_template, url_for, flash, redirect, session
 from vibing import app
 from recommendation.popular_recommendation import PopularRecommendation
+from data.spotify import spotify_scraper
 from vibing.forms import GenreForm
 
 
@@ -13,6 +14,11 @@ def home():
 @app.route("/started")
 def started():
     return render_template('started.html')
+
+
+@app.route("/about")
+def about():
+    return render_template('about.html')
 
 
 @app.route("/popular_recommendation", methods=['GET', 'POST'])
@@ -33,4 +39,12 @@ def popular_recommendation():
 @app.route("/results", methods=['GET', 'POST'])
 def results():
     recommendations = session.get("recommendations")
-    return render_template('results.html', recommendations=recommendations)
+    artist_tracks = []
+    images = []
+    for artist in recommendations:
+        tracks, album_images = spotify_scraper.getTopTracks(artist)
+        for i in range(len(tracks)):
+            artist_tracks.append(tracks[i])
+            images.append(album_images[i])
+    length = len(artist_tracks)
+    return render_template('results.html',  artist_tracks=artist_tracks, images=images, length=length, recommendations=recommendations)

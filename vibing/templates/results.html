@@ -2,12 +2,12 @@
 <html>
 
 <head>
-  <!-- Required meta tags  https://www.youtube.com/watch?v=mEtmJ2xk16g -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='scss/navbar.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='scss/index.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='scss/footer.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/results.css') }}">
   <script src="https://kit.fontawesome.com/eb46b50ba3.js" crossorigin="anonymous"></script>
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='favicon/apple-touch-icon.png') }}">
@@ -35,18 +35,24 @@
         <a href="{{url_for('started')}}">Getting Started</a>
       </li>
       <li class="nav-link">
-        <a href="{{url_for('popular_recommendation')}}">Recommend</a>
+        <a href="{{url_for('popular_recommendation')}}">popular recommend</a>
+      </li>
+      <li class="nav-link">
+        <a href="{{url_for('about')}}">about</a>
       </li>
     </ul>
   </header>
   <div style="background: url('./static/result-hero.jpg') no-repeat bottom center; " class="hero">
-    <h1>Sonder</h1>
+    <h1>Here you go....</h1>
   </div>
-  <ul class="song-list">
-    {% for song in recommendations %}
-    <li>{{song}}</li>
+  <div class="recommendation-box">
+    {% for i in range(length) %}
+    <div class="song-item">
+      <h1>{{artist_tracks[loop.index0]}}</h1>
+      <a><img style="height:200px; width:200px" src="{{images[loop.index0]}}"></a>
+    </div>
     {% endfor %}
-  </ul>
+  </div>
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -63,7 +69,8 @@
           <h4>contact us</h4>
           <ul>
             <li>
-              <a href="#"><i class="fab fa-github fa-2x"></i> Feature Request?</a>
+              <a href="https://github.com/Jinb2/Sonder/issues/new"><i class="fab fa-github fa-2x"></i> Feature
+                Request?</a>
             </li>
 
             <li style="padding-top: 5%;"><a href="https://forms.gle/WcnW6kz1cwQNYA1U8">

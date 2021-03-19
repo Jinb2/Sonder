@@ -1,11 +1,111 @@
-<div style="padding-bottom: 2%;" class="container">
-    <h1>What is Sonder?</h1>
-    <p>
-        Ever get tired of listening to the same songs on YouTube over and over again? Well, Sonder is your all-in-one
-        music recommendation system.
-        Experience the power of machine learning as it shows you songs that will amaze you. Sonder learns your music
-        tastes and compares it with other users to create a
-        better music experience.
-        <strong><br>We want you to just vibe!</strong>
-    </p>
-</div>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
+    <script src="https://kit.fontawesome.com/eb46b50ba3.js" crossorigin="anonymous"></script>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',filename='favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static',filename='favicon/site.webmanifest') }}">
+    <title>Sonder</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="{{url_for('home')}}">
+                <img class="logo" src="{{url_for('static',filename='logo.png')}}">
+            </a>
+        </div>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="menu-icon">
+                <span class="menu-icon__line"></span>
+            </span>
+        </label>
+        <ul class="nav-links">
+            <li class="nav-link">
+                <a href="{{url_for('started')}}">Getting Started</a>
+            </li>
+            <li class="nav-link">
+                <a href="{{url_for('popular_recommendation')}}">popular recommend</a>
+            </li>
+            <li class="nav-link">
+                <a href="{{url_for('about')}}">about</a>
+            </li>
+        </ul>
+    </header>
+    <div style="background: url('./static/about-us-hero.jpg') no-repeat bottom center; opacity: .85; " class="hero">
+        <div style="padding-bottom: 2%;" class="container">
+            <h1>What is Sonder?</h1>
+            <p style="color: black; font-weight: bold;">
+                Ever get tired of listening to the same songs on YouTube over and over again? Well, Sonder is your
+                all-in-one
+                music recommendation system.
+                Experience the power of machine learning as it shows you songs that will amaze you. Sonder learns your
+                music
+                tastes and compares it with other users to create a
+                better music experience.
+                <strong><br>We want you to just vibe!</strong>
+            </p>
+        </div>
+    </div>
+    <h2 class="about-header">What kind of recommendation?</h2>
+    <div class="row">
+        <div class="column">
+            <h2>Popular recommend</h2>
+            <p>Get recommendations based on the most popular rated songs for your genre</p>
+            <a href={{url_for('popular_recommendation')}}><img src="../static/logo1.jpeg"></a>
+
+        </div>
+        <div class="column">
+            <h2>ai powered recommendation</h2>
+            <p>Experience the power of machine learning to recommend you music.</p>
+            <a href=#><img src="../static/logo2.jpg"></a>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <img src="../static/logo.png">
+                </div>
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>contact us</h4>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/Jinb2/Sonder/issues/new"><i class="fab fa-github fa-2x"></i>
+                                Feature
+                                Request?</a>
+                        </li>
+
+                        <li style="padding-top: 5%;"><a href="https://forms.gle/WcnW6kz1cwQNYA1U8">
+                                <i class="fab fa-google fa-2x"></i> Want to
+                                contribute? </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/navbar.js')}}"> </script>
+</body>
+
+
+</html>

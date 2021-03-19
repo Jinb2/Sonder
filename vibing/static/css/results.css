@@ -1,0 +1,17 @@
+.recommendation-box {
+  background-color: #63b5cf;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+.song-item {
+  padding: 20px;
+  text-align: center;
+}
+
+.song-item h1 {
+  font-size: 20px;
+}
+/*# sourceMappingURL=results.css.map */
