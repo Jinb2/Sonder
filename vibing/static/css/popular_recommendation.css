@@ -1,0 +1,107 @@
+::-webkit-input-placeholder {
+  /* Edge */
+  color: white;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  -webkit-box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+          box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 var(--hover);
+            box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 var(--hover);
+            box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+.form-control {
+  text-align: center;
+}
+
+.form-control input {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1.5em 3em;
+  color: var(--color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.form-control input:hover, .form-control input:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+.form-control .fill {
+  --color: #a972cb;
+  --hover: #cb72aa;
+}
+
+.form-control .pulse {
+  --color: #ef6eae;
+  --hover: #ef8f6e;
+}
+
+.form-control .close {
+  --color: #ff7f82;
+  --hover: #ffdc7f;
+}
+
+.form-control .raise {
+  --color: #ffa260;
+  --hover: #e5ff60;
+}
+
+.form-control .up {
+  --color: #e4cb58;
+  --hover: #94e458;
+}
+
+.form-control .slide {
+  --color: #8fc866;
+  --hover: #66c887;
+}
+
+.form-control .offset {
+  --color: #19bc8b;
+  --hover: #1973bc;
+}
+
+.form-control button {
+  color: var(--color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.form-control button:hover, .form-control button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+/*# sourceMappingURL=popular_recommendation.css.map */

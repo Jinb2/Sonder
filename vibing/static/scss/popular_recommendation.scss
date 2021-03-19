@@ -1,0 +1,82 @@
+::-webkit-input-placeholder { /* Edge */
+    color: white;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer */
+    color: white;
+  }
+  
+  ::placeholder {
+    color: white;
+  }
+
+// Animate the size, outside
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+.form-control{
+    text-align: center;
+
+    // Basic button styles
+    input {
+        background: none;
+        border: 2px solid;
+        font: inherit;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1.5em 3em;
+
+        color: var(--color);
+        transition: 0.25s;
+        
+        &:hover,
+        &:focus { 
+        border-color: var(--hover);
+        color: #fff;
+    }
+
+   
+  
+}
+
+
+
+//=== Set button colors
+  $colors: (
+    fill: #a972cb,
+    pulse: #ef6eae, 
+    close: #ff7f82, 
+    raise: #ffa260, 
+    up: #e4cb58, 
+    slide: #8fc866, 
+    offset: #19bc8b
+  );
+  
+  // Sass variables compile to a static string; CSS variables are dynamic and inherited
+    // Loop through the map and set CSS custom properties using Sass variables
+  @each $button, $color in $colors {
+    .#{$button} {
+      --color: #{$color};
+      --hover: #{adjust-hue($color, 45deg)};
+    }
+  }
+
+  // Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
+    button {  
+        color: var(--color);
+        transition: 0.25s;
+        
+        &:hover,
+        &:focus { 
+        border-color: var(--hover);
+        color: #fff;
+        }
+    }
+}
